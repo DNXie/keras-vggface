@@ -127,7 +127,7 @@ def VGGFace(include_top=True, weights='vggface',
         x = Dense(4096, name='fc7')(x)
         x = Activation('relu', name='fc7/relu')(x)
         x = Dense(2622, name='fc8')(x)
-        x = Activation('relu', name='fc8/softmax')(x)
+        x = Activation('softmax', name='fc8/softmax')(x)
     else:
         if pooling == 'avg':
             x = GlobalAveragePooling2D()(x)
